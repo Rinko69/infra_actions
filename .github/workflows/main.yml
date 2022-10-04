@@ -63,10 +63,10 @@ jobs:
     - name: executing remote ssh commands to deploy
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USER }}
-        key: ${{ secrets.SSH_KEY }}
-        passphrase: ${{ secrets.PASSPHRASE }}
+        host: ${{ secrets.SECRET_HOST }}
+        username: ${{ secrets.SECRET_USER }}
+        key: ${{ secrets.SECRET_SSH }}
+        passphrase: ${{ secrets.SECRET_PASSPHRASE }}
         script: |
           # Выполняет pull образа с DockerHub
           sudo docker pull rinko69/infra_actions
